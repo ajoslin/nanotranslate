@@ -1,0 +1,32 @@
+{
+  "name": "nanotranslate",
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Translate with pluralization and variables in under 600b.",
+  "license": "MIT",
+  "repository": "ajoslin/nanotranslate",
+  "author": {
+    "name": "Andrew Joslin",
+    "email": "andrewtjoslin@gmail.com",
+    "url": "ajoslin.com"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "keywords": [
+    "translate",
+    "i18n",
+    "micro",
+    "small",
+    "nano",
+    "payload"
+  ],
+  "devDependencies": {
+    "tape": "^4.0.0",
+    "standard": "^7.0.0"
+  },
+  "files": [
+    "index.js",
+    "test.js"
+  ]
+}
