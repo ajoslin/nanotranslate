@@ -35,7 +35,7 @@ test('basic', t => {
 })
 
 test('not found', t => {
-  t.throws(() => translate('NOT_FOUND'), /not found/)
+  t.throws(() => translate('NOT_FOUND'), /"NOT_FOUND" not found/)
   t.end()
 })
 
