@@ -12,6 +12,7 @@ var translate = Translate({
       'Here is {{ count }}',
       'And larger: {{ count }}'
     ],
+    FN: ({ a, b, c }) => [a, b, c].join('|'),
 
     TEMPLATED: '{{foo}} {{   bar}} baz',
 
@@ -84,6 +85,17 @@ test('complex', t => {
       count: 999
     }),
     '999 apples left.'
+  )
+  t.end()
+})
+
+test('function', t => {
+  t.equal(
+    translate('FN', {
+      a: 1,
+      b: 2
+    }),
+    '1|2|'
   )
   t.end()
 })

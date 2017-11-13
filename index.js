@@ -22,6 +22,10 @@ function Translate (dict) {
       value = value[Math.abs(count)] || value[value.length - 1]
     }
 
+    if (typeof value === 'function') {
+      return value(data)
+    }
+
     for (var templateKey in data) {
       value = value.replace(new RegExp('{{\\s*' + templateKey + '\\s*}}', 'g'), data[templateKey])
     }

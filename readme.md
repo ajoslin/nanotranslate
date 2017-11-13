@@ -22,7 +22,8 @@ var translate = Translate({
       'Zero items left.',
       'One item left.',
       '{{count}} items left, {{name}}.'
-    ]
+    ],
+    FN: ({ value }) => 'Hello, ' + value
   }
 })
 
@@ -33,6 +34,7 @@ translate('TEMPLATED', {value: 'hello'}) // => 'simple hello string'
 translate('PLURAL', {count: 1}) // => 'Zero items left.'
 translate('PLURAL', {count: 2}) // => 'One item left.'
 translate('PLURAL', {count: 3, name: 'Alex'}) // => '3 items left, Alex.'
+translate('FN', { value: 'world'}) // => 'Hello, world'
 ```
 
 ## License
