@@ -23,7 +23,7 @@ function Translate (dict) {
     }
 
     if (typeof value === 'function') {
-      return value(data)
+      return value(data, translate)
     }
 
     for (var templateKey in data) {
