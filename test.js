@@ -12,7 +12,6 @@ var translate = Translate({
       'Here is {{ count }}',
       'And larger: {{ count }}'
     ],
-    FN: ({ a, b, c }) => [a, b, c].join('|'),
 
     TEMPLATED: '{{foo}} {{   bar}} baz',
 
@@ -89,13 +88,14 @@ test('complex', t => {
   t.end()
 })
 
-test('function', t => {
+test('separate Translate.run function', t => {
   t.equal(
-    translate('FN', {
-      a: 1,
-      b: 2
-    }),
-    '1|2|'
+    Translate.run({
+      values: {
+        HELLO: 'hello {{world}}'
+      }
+    }, 'HELLO', {world: 'planet'}),
+    'hello planet'
   )
   t.end()
 })
